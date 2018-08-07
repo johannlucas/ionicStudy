@@ -1,3 +1,3 @@
 ## Ionic
 
-Projeto para estudos do framework IONIC.
+Project for study of IONIC Framework
