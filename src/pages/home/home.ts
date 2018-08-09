@@ -17,7 +17,7 @@ export class HomePage implements NavLifecycles {
   constructor(public navCtrl: NavController,
     private _loadingCtrl: LoadingController,
     private _alertCtrl: AlertController,
-    private _carrosService: CarrosServiceProvider) {}
+    private _carrosService: CarrosServiceProvider) { }
 
   ionViewDidLoad() {
     let loading = this._loadingCtrl.create({
@@ -47,5 +47,12 @@ export class HomePage implements NavLifecycles {
           }).present();
         }
       );
+  }
+
+  selecionaCarro(carro: Carro) {
+    console.log(carro);
+    this.navCtrl.push("EscolhaPage", {
+      carroSelecionado: carro
+    });
   }
 }
