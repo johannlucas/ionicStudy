@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Carro } from '../../app/models/carro';
 import { Acessorio } from '../../app/models/acessorio';
+import { CadastroPage } from '../cadastro/cadastro';
 
 @IonicPage()
 @Component({
@@ -37,7 +38,10 @@ export class EscolhaPage {
     return this._precoTotal;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EscolhaPage');
+  avancaCadastro() {
+    this.navCtrl.push(CadastroPage.name, {
+      carroSelecionado: this.carro,
+      precoTotal: this._precoTotal
+    });
   }
 }

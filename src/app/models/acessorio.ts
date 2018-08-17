@@ -1,4 +1,4 @@
-export class Acessorio {
-    public nome: string;
-    public preco: number;
+export interface Acessorio {
+    nome: string;
+    preco: number;
 }
