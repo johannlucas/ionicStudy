@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AgendamentosServiceProvider {
 
   private _url = 'http://localhost:8080/api';
 
-  constructor(public _http: Http) {
+  constructor(public _httpClient: HttpClient) {
   }
 
   agenda(agendamento) {
-    return this._http.post(this._url + '/agendamento/agenda', agendamento)
+    return this._httpClient.post(this._url + '/agendamento/agenda', agendamento)
   }
 }
